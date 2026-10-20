@@ -1,0 +1,7 @@
+SELECT 
+    k.nama_kasir, 
+    SUM(t.total) AS total_penjualan_kasir
+FROM kasir k
+JOIN transaksi t ON k.id_kasir = t.id_kasir
+WHERE t.tanggal >= '2026-10-01'
+GROUP BY k.id_kasir, k.nama_kasir;
