@@ -1,0 +1,29 @@
+-- Insert 3 baris ke tabel pemilik
+INSERT INTO pemilik (nama_pemilik) VALUES
+('Slamet'),
+('Joko'),
+('Sri');
+
+-- Insert 3 baris ke tabel kasir
+INSERT INTO kasir (nama_kasir, shift) VALUES
+('Rian', 'Pagi'),
+('Putri', 'Siang'),
+('Joko', 'Malam');
+
+-- Insert 3 baris ke tabel transaksi
+INSERT INTO transaksi (tanggal, total_pendapatan, id_pemilik, id_kasir) VALUES
+('2026-10-01', 1250000, 1, 1),
+('2026-10-02', 980000, 1, 2),
+('2026-10-03', 1500000, 2, 3);
+
+-- Read salah satu tabel Induk
+SELECT * FROM kasir;
+
+-- Update salah satu nilai data
+UPDATE transaksi 
+SET total_pendapatan = 1300000 
+WHERE id_transaksi = 1;
+
+-- Delete salah satu baris data
+DELETE FROM transaksi 
+WHERE id_transaksi = 3;
